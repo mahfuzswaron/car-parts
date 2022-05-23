@@ -3,7 +3,6 @@ import ReviewCard from './ReviewCard';
 
 
 const Reviews = () => {
-    const arr = ['1', '2', '3', '4', '5', '6',];
     const reviews = [
         {
             _id: 'item1',
@@ -44,7 +43,7 @@ const Reviews = () => {
     ]
     return (
         <section className='flex flex-col items-center'>
-            <h3 className='text-5xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>
+            <h3 className='text-4xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>
             <div class="carousel carousel-center max-w-lg my-5 p-4 space-x-4 bg-neutral rounded-box">
                 {
                     reviews.map(r => <ReviewCard
