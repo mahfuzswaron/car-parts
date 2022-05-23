@@ -23,7 +23,7 @@ const Header = () => {
                             <li>{login}</li>
                         </ul>
                     </div>
-                    <Link className='font-bold' to='/'>CAR PARTS</Link>
+                    <Link className='font-bold text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
                 </div>
                 <div class="navbar-end hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
