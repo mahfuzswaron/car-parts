@@ -55,7 +55,7 @@ const Reviews = () => {
             </div>
             <div class="flex justify-center w-full py-2 gap-2 my-5">
                 {
-                    reviews.map(a => <a key={a._id} href={`#${a._id}`} className="btn btn-xs">*</a>)
+                    reviews.map((a, i) => <a key={a._id} href={`#${a._id}`} className="btn btn-xs btn-ghost rounded-full">{i + 1}</a>)
                 }
             </div>
         </section>
@@ -63,6 +63,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-{/* <div id={a} class="carousel-item">
-    <img src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2" alt='' className="rounded-box" />
-</div> */}
