@@ -40,7 +40,8 @@ const Reviews = () => {
             ratings: 4,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         },
-    ]
+    ];
+
     return (
         <section className='flex flex-col items-center'>
             <h3 className='text-4xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>

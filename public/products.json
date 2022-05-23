@@ -4,7 +4,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/9TjdyZ7/product-3.png",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -12,7 +12,7 @@
         "description": "Best Lug for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/Kxs5tVz/product-1.png",
         "quantity": 1000,
-        "min-quantity": 100,
+        "min_quantity": 100,
         "price": 199
     },
     {
@@ -20,7 +20,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/P4njNm0/product-4.png",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -28,7 +28,7 @@
         "description": "Best sit for your car. Soft and well graping.",
         "img": "https://i.ibb.co/Bt49tt9/product-13.png",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -36,7 +36,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/bJJvpvf/Bushes.webp",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -44,7 +44,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/PQw0pbN/Boots-Gaskets.webp",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -52,7 +52,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/BKhfBy6/Control-Arms.webp",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -60,7 +60,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/T2CdqwQ/Engine-Mount.webp",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -68,7 +68,7 @@
         "description": "Best Brake for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/Kxs5tVz/product-1.png  ",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     },
     {
@@ -76,7 +76,7 @@
         "description": "Best Steering Wheel for your car. smooth turn, perfect circle, well graping.",
         "img": "https://i.ibb.co/RC6th8M/Performance-Drop-Link-Loyal-Parts.webp",
         "quantity": 947,
-        "min-quantity": 120,
+        "min_quantity": 120,
         "price": 99
     }
 
