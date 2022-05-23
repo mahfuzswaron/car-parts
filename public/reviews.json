@@ -1,0 +1,32 @@
+[
+    {
+        "name": "User1",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    },
+    {
+        "name": "User2",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    },
+    {
+        "name": "User3",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    },
+    {
+        "name": "User4",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    },
+    {
+        "name": "User5",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    },
+    {
+        "name": "User6",
+        "ratings": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    }
+]

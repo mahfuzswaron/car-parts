@@ -3,7 +3,7 @@ import React from 'react';
 const BusinessSummery = () => {
     return (
         <section className='my-5'>
-            <h3 className='text-5xl font-semibold my-5 text-center text-primary'>Business Summery</h3>
+            <h3 className='text-4xl font-semibold my-5 text-center text-primary'>Business Summery</h3>
             <div className='flex justify-center p-5 w-full scale-100 '>
                 <div class="stats shadow">
 
