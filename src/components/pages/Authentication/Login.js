@@ -11,12 +11,9 @@ const Login = () => {
             </div>
             <div className='flex '>
                 <div>
-                    <hr className='border-2'></hr>
                 </div>
                 OR
                 <div>
-                    <hr></hr>
-
                 </div>
             </div>
             <div>

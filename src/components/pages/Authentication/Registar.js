@@ -1,10 +1,47 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Registar = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const onSubmit = async data => {
+        console.log(data);
+        const { name, email, password } = data;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        console.log(user)
+
+    };
+
+    if (error || updateError) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading || updating) {
+        return <p>Loading...</p>;
+    }
+    if (user) {
+        console.log(user)
+        return (
+            <div>
+                <p>Registered User: {user.email}</p>
+            </div>
+        );
+    };
+
     return (
         <form className='shadow-md p-5 rounded-md grid grid-cols-1 gap-3 w-2/3 mx-auto' onSubmit={handleSubmit(onSubmit)}>
             <h3 className='text-4xl text-primary text-center font-semibold mb-5'>Please Registar</h3>
