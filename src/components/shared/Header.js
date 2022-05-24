@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -22,7 +23,6 @@ const Header = () => {
     const dashboard = <Link to='/dashboard'>DASHBOARD</Link>
     const login = <Link to='/login'>LOGIN</Link>
     const blogs = <Link to='/blogs'>BLOGS</Link>
-    const products = <Link to='/products'>PRODUCTS</Link>
 
     return (
         <div className='mx-5 flex justify-center'>
@@ -36,10 +36,10 @@ const Header = () => {
                             <li>{home}</li>
                             <li>{blogs}</li>
                             {
-                                user.email ?
+                                user?.email ?
                                     <>
                                         <li>{dashboard}</li>
-                                        <li><button className='btn-ghost'>LOG OUT</button></li>
+                                        <li><button onClick={() => signOut(auth)} className='btn-ghost'>LOG OUT</button></li>
                                     </>
                                     :
                                     <li>{login} </li>
@@ -54,10 +54,10 @@ const Header = () => {
                         <li>{home}</li>
                         <li>{blogs}</li>
                         {
-                            user.email ?
+                            user?.email ?
                                 <>
                                     <li>{dashboard}</li>
-                                    <li><button className='btn-ghost'>LOG OUT</button></li>
+                                    <li><button onClick={() => signOut(auth)} className='btn-ghost'>LOG OUT</button></li>
                                 </>
                                 :
                                 <li>{login} </li>
