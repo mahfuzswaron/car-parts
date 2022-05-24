@@ -9,6 +9,16 @@ const Login = () => {
             <div className='w-2/3'>
                 <EmailLogin />
             </div>
+            <div className='flex '>
+                <div>
+                    <hr className='border-2'></hr>
+                </div>
+                OR
+                <div>
+                    <hr></hr>
+
+                </div>
+            </div>
             <div>
                 <SocialLogIn />
             </div>
