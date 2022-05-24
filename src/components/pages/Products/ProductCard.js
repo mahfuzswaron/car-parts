@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
             <figure class="px-10 pt-10">
                 <img src={img} alt="Shoes" class="rounded-xl" />
             </figure>
-            <div class="card-body items-start text-left">
+            <div class="card-body  text-left">
                 <h2 class="card-title">{name}</h2>
                 <p>{description}</p>
                 <p><span className='font-bold'>${price}</span> Per Unit</p>
