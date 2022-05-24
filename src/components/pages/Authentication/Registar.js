@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
@@ -13,13 +13,16 @@ const Registar = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
 
     const onSubmit = async data => {
         console.log(data);
         const { name, email, password } = data;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        console.log(user)
+        navigate(from, { replace: true });
 
     };
 

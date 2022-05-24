@@ -1,9 +1,13 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init'
 
 const SocialLogIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
     if (error) {
         return (
             <div>
@@ -24,7 +28,11 @@ const SocialLogIn = () => {
 
     return (
         <div>
-            <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-primary'>SIGN IN WITH GOOGLE</button>
+            <button onClick={async () => {
+                await signInWithGoogle()
+                navigate(from, { replace: true });
+            }}
+                className='btn btn-outline btn-primary'>SIGN IN WITH GOOGLE</button>
         </div>
     );
 };

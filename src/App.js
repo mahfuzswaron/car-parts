@@ -8,6 +8,7 @@ import Products from './components/pages/Products/Products';
 import NotFound from './components/pages/NotFound/NotFound';
 import Footer from './components/shared/Footer';
 import Header from './components/shared/Header';
+import RequireAuth from './components/shared/RequireAuth';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registar' element={<Registar />} />

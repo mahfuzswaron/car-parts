@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
@@ -13,7 +13,14 @@ const EmailLogin = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => signInWithEmailAndPassword(data.email, data.password);
+    const onSubmit = async data => {
+
+        await signInWithEmailAndPassword(data.email, data.password)
+        navigate(from, { replace: true });
+    };
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
 
     if (error) {
         return (
@@ -25,13 +32,7 @@ const EmailLogin = () => {
     if (loading) {
         return <p>Loading...</p>;
     }
-    if (user) {
-        return (
-            <div>
-                <p>Signed In User: {user.email}</p>
-            </div>
-        );
-    }
+
 
 
 
