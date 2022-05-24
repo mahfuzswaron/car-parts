@@ -1,12 +1,29 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        console.log('header', error)
+        return
+    }
+    if (user) {
+        console.log(user);
+    }
+
+
     const home = <Link to='/'>HOME</Link>
     const dashboard = <Link to='/dashboard'>DASHBOARD</Link>
     const login = <Link to='/login'>LOGIN</Link>
     const blogs = <Link to='/blogs'>BLOGS</Link>
     const products = <Link to='/products'>PRODUCTS</Link>
+
     return (
         <div className='mx-5 flex justify-center'>
             <div class="navbar bg-base-100 w-2/3 mx-0">
@@ -17,10 +34,17 @@ const Header = () => {
                         </label>
                         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>{home}</li>
-                            <li>{products}</li>
-                            <li>{dashboard}</li>
                             <li>{blogs}</li>
-                            <li>{login}</li>
+                            {
+                                user.email ?
+                                    <>
+                                        <li>{dashboard}</li>
+                                        <li><button className='btn-ghost'>LOG OUT</button></li>
+                                    </>
+                                    :
+                                    <li>{login} </li>
+                            }
+
                         </ul>
                     </div>
                     <Link className='font-bold text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
@@ -28,10 +52,16 @@ const Header = () => {
                 <div class="navbar-end hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         <li>{home}</li>
-                        <li>{products}</li>
-                        <li>{dashboard}</li>
                         <li>{blogs}</li>
-                        <li>{login}</li>
+                        {
+                            user.email ?
+                                <>
+                                    <li>{dashboard}</li>
+                                    <li><button className='btn-ghost'>LOG OUT</button></li>
+                                </>
+                                :
+                                <li>{login} </li>
+                        }
                     </ul>
                 </div>
             </div>
