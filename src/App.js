@@ -9,6 +9,7 @@ import NotFound from './components/pages/NotFound/NotFound';
 import Footer from './components/shared/Footer';
 import Header from './components/shared/Header';
 import RequireAuth from './components/shared/RequireAuth';
+import Purchase from './components/pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registar' element={<Registar />} />
+        <Route path='/purchase/:id' element={
+          <RequireAuth>
+            <Purchase />
+          </RequireAuth>} />
         <Route path='*' element={<NotFound></NotFound>} />
       </Routes>
       <Footer />
