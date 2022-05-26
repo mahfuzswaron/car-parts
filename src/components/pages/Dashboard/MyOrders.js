@@ -5,7 +5,7 @@ import auth from '../../../firebase.init';
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [user, loading] = useAuthState(auth)
-    const url = 'http://localhost:5000/orders';
+    const url = 'https://car-parts-server.herokuapp.com/orders';
 
     useEffect(() => {
         fetch(url, {
@@ -23,9 +23,40 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
-            {orders?.length}
-        </div>
+        <section>
+            <h3 className='font-medium text-3xl '>My Orders</h3>
+            <table className='w-full my-5'>
+                <thead>
+                    <tr className=''>
+                        <td></td>
+                        <td className='font-bold text-primary'>Name</td>
+                        <td className='font-bold text-primary'>Quantity</td>
+                        <td className='font-bold text-primary'>Price</td>
+                        <td className='font-bold text-primary'>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        orders.map((order, index) => <tr className={index % 2 === 0 && 'bg-base-200'}>
+                            <td>{index + 1}</td>
+                            <td>{order.name}</td>
+                            <td>{order.quantity}</td>
+                            <td>{parseInt(order.quantity) * parseInt(order.price)}</td>
+                            <td className={
+                                order.status === 'pending' ? 'text-warning' : 'text-success'}>{order.status}
+                            </td>
+                            <td>{order.status === 'pending' && <button className='btn btn-xs btn-success text-white'>
+                                Pay
+                            </button>}
+                            </td>
+                            <td>
+                                <button className='btn btn-xs btn-error'>cancel</button>
+                            </td>
+                        </tr>)
+                    }
+                </tbody>
+            </table>
+        </section>
     );
 };
 

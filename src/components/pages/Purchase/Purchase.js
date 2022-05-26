@@ -25,6 +25,8 @@ const Purchase = () => {
             location: data.location,
             phone: data.phone,
             quantity: data.orderedQuantity,
+            price: product.price,
+            img: product.img,
             status: 'pending'
         }
 

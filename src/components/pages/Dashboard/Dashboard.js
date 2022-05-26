@@ -35,7 +35,9 @@ const Dashboard = () => {
 
                     </div>
                 </div>
-                <Outlet />
+                <div className='lg:flex-grow'>
+                    <Outlet />
+                </div>
             </div>
 
         </div>
