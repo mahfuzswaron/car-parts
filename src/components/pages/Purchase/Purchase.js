@@ -15,7 +15,7 @@ const Purchase = () => {
     }, [url]);
 
 
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [productPrice, setProrductPrice] = useState(0);
     const onSubmit = data => {
