@@ -19,7 +19,26 @@ const Purchase = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [productPrice, setProrductPrice] = useState(0);
     const onSubmit = data => {
-        console.log(data);
+        const order = {
+            productId: id,
+            name: product.name,
+            location: data.location,
+            phone: data.phone,
+            quantity: data.orderedQuantity,
+            status: 'pending'
+        }
+
+        fetch('http://localhost:5000/order', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                email: user.email
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result))
+
 
     };
 
