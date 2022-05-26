@@ -1,46 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReviewCard from './ReviewCard';
 
 
 const Reviews = () => {
-    const reviews = [
-        {
-            _id: 'item1',
-            name: 'User1',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-        {
-            _id: 'item2',
-            name: 'User2',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-        {
-            _id: 'item3',
-            name: 'User3',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-        {
-            _id: 'item4',
-            name: 'User4',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-        {
-            _id: 'item5',
-            name: 'User5',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-        {
-            _id: 'item6',
-            name: 'User6',
-            ratings: 4,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
-        },
-    ];
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+
+    }, [])
 
     return (
         <section className='flex flex-col items-center'>

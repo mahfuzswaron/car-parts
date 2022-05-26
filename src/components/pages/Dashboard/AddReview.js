@@ -5,22 +5,24 @@ import auth from '../../../firebase.init';
 import Success from '../../shared/Success';
 
 const AddReview = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [success, setSuccess] = useState(false);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
 
         const review = {
+            name: user.displayName,
             email: user.email,
             ratings: data.ratings,
             description: data.description
         };
 
-        fetch('http://localhost:5000/addreview', {
-            method: 'POST',
+        fetch('https://car-parts-server.herokuapp.com/addreview', {
+            method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                email: user.email
             },
             body: JSON.stringify(review)
         })
