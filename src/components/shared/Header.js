@@ -10,13 +10,6 @@ const Header = () => {
     if (loading) {
         return <p>Loading...</p>;
     }
-    if (error) {
-        console.log('header', error)
-        return
-    }
-    if (user) {
-        console.log(user);
-    }
 
 
     const home = <Link to='/'>HOME</Link>
