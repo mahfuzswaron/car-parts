@@ -12,7 +12,7 @@ const EmailLogin = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const onSubmit = async data => {
 
         await signInWithEmailAndPassword(data.email, data.password)
@@ -22,13 +22,13 @@ const EmailLogin = () => {
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
 
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
+    // if (error) {
+    //     return (
+    //         <div>
+    //             <p>Error: {error.message}</p>
+    //         </div>
+    //     );
+    // }
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -42,10 +42,16 @@ const EmailLogin = () => {
             <input type='email' placeholder='Email Adress' className='input input-bordered w-full ' {...register("email", {
                 required: true
             })} />
+            <p className='text-error'>{errors?.email.type === "required" && `Email is required`}</p>
             <input type='password' placeholder='Password' className='input input-bordered w-full' {...register("password", {
                 required: true,
                 minLength: 6,
             })} />
+            <p className='text-error'>{errors?.password.type === 'required' && `Password is required`}</p>
+            <p className='text-error'>{errors?.password.type === 'minLength' && `minimum 6 characters`}</p>
+            {
+                error && <p className='text-error'> {error.message}</p>
+            }
             <input className='btn btn-primary' value='Log in' type="submit" />
             <p>New to Car Parts? <Link to='/registar' className='underline'>Registar here</Link></p>
         </form>
