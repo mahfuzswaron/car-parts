@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import AddReview from './AddReview';
-import MyOrders from './MyOrders';
 
 const Dashboard = () => {
     return (
@@ -26,11 +24,11 @@ const Dashboard = () => {
 
                             <li><Link to="myorders">My Orders</Link></li>
                             <li><Link to="addreview">Add Review</Link></li>
-                            <li><Link to="myprofile">Add Review</Link></li>
-                            <li><Link to="manageorders">Add Review</Link></li>
-                            <li><Link to="addproduct">Add Review</Link></li>
-                            <li><Link to="manageproducts">Add Review</Link></li>
-                            <li><Link to="makeadmin">Add Review</Link></li>
+                            <li><Link to="myprofile">My Profile</Link></li>
+                            <li><Link to="manageorders">Manage Orders</Link></li>
+                            <li><Link to="addproduct">Add Product</Link></li>
+                            <li><Link to="manageproducts">Manage Product</Link></li>
+                            <li><Link to="makeadmin">Make Admin</Link></li>
                         </ul>
 
                     </div>
