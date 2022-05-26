@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
 const Purchase = () => {
     const id = useParams().id;
     const [product, setProduct] = useState();
-    const url = `http://localhost:5000/parts/${id}`;
+    const url = `https://car-parts-server.herokuapp.com/parts/${id}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const Purchase = () => {
     const [productPrice, setProrductPrice] = useState(0);
     const onSubmit = data => {
         console.log(data);
-        setProrductPrice(data.orderedQuantity * price)
+
     };
 
     if (loading || !product) {
@@ -35,7 +35,7 @@ const Purchase = () => {
                 <p className='text-center '>You are purchasing <strong className='text-primary'>{name}</strong> with this mail: <em>{user?.email}</em></p>
             </div>
 
-            <form className='p-5 mb-10 mt-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
+            <form className='p-5 mb-5 mt-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
                 <h3 className='text-4xl text-primary text-center font-semibold mb-5'>Confirm Order</h3>
                 <input type='text' placeholder='Your Location' className='input input-bordered w-full ' {...register("location", {
                     required: true
@@ -47,20 +47,30 @@ const Purchase = () => {
                 })} />
                 <p className='text-error'>{errors.phone?.type === 'required' && "Phone Number is required"}</p>
 
-                <input type='number' placeholder={`Product Quantity (${min_quantity} - ${quantity})`} className='input input-bordered w-full' {...register("orderedQuantity", {
+                <input type='number' placeholder={`Product Quantity (${min_quantity} - ${quantity})`} onKeyUp={(e) => {
+                    console.log(e.target.value)
+                    setProrductPrice(e.target.value * price)
+                }} className='input input-bordered w-full' {...register("orderedQuantity", {
                     required: true,
                     min: min_quantity,
                     max: quantity
                 })} />
 
-                <p className='text-error'>{errors.orderedQuantity?.type === 'required' && "Order Quantity is required"}</p>
-                <p className='text-error'>{(errors.orderedQuantity?.type === 'min' || errors.orderedQuantity?.type === 'max') && `Order Quantity is must be within ${min_quantity} - ${quantity}`}</p>
+                {
+                    errors?.orderedQuantity &&
+                    <>
+                        <p className='text-error'>{errors.orderedQuantity?.type === 'required' && "Order Quantity is required"}</p>
+                        <p className='text-error'>{(errors.orderedQuantity?.type === 'min' || errors.orderedQuantity?.type === 'max') && `Order Quantity is must be within ${min_quantity} - ${quantity}`}</p>
+                    </>
 
+                }
                 <p className='text-success'>{productPrice > 0 && `Subtotal: $${productPrice}`}</p>
 
                 <input className='btn btn-primary' value='Order' type="submit" />
-
             </form>
+            <button className='btn btn-outline btn-primary px-5 py-3'>
+                <Link to="/">Back</Link>
+            </button>
         </div>
     );
 };

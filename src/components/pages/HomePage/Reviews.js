@@ -45,7 +45,7 @@ const Reviews = () => {
     return (
         <section className='flex flex-col items-center'>
             <h3 className='text-4xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>
-            <div class="carousel carousel-center max-w-lg my-5 p-4 space-x-4 bg-neutral rounded-box">
+            <div className="carousel carousel-center max-w-lg my-5 p-4 space-x-4 bg-neutral rounded-box">
                 {
                     reviews.map(r => <ReviewCard
                         key={r._id}
@@ -54,7 +54,7 @@ const Reviews = () => {
                 }
 
             </div>
-            <div class="flex justify-center w-full py-2 gap-2 my-5">
+            <div className="flex justify-center w-full py-2 gap-2 my-5">
                 {
                     reviews.map((a, i) => <a key={a._id} href={`#${a._id}`} className="btn btn-xs btn-ghost rounded-full">{i + 1}</a>)
                 }
