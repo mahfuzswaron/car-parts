@@ -16,7 +16,18 @@ const MyOrders = () => {
         })
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [user]);
+    }, [user, orders]);
+
+    const handleCancel = (id, name) => {
+        const confirm = window.confirm(`Are you sure to cancel ${name}?`)
+        if (confirm) {
+            fetch(`https://car-parts-server.herokuapp.com/deleteorder/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => console.log(data));
+        }
+    }
 
     if (loading) {
         return <p>loading...</p>
@@ -50,7 +61,7 @@ const MyOrders = () => {
                             </button>}
                             </td>
                             <td>
-                                <button className='btn btn-xs btn-error'>cancel</button>
+                                <button onClick={() => handleCancel(order._id, order.name)} className='btn btn-xs btn-error'>cancel</button>
                             </td>
                         </tr>)
                     }

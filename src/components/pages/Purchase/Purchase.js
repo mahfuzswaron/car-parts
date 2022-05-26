@@ -69,7 +69,6 @@ const Purchase = () => {
                 <p className='text-error'>{errors.phone?.type === 'required' && "Phone Number is required"}</p>
 
                 <input type='number' placeholder={`Product Quantity (${min_quantity} - ${quantity})`} onKeyUp={(e) => {
-                    console.log(e.target.value)
                     setProrductPrice(e.target.value * price)
                 }} className='input input-bordered w-full' {...register("orderedQuantity", {
                     required: true,
