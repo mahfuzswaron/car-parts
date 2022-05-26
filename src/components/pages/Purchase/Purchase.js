@@ -28,7 +28,7 @@ const Purchase = () => {
             status: 'pending'
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://car-parts-server.herokuapp.com/order', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -87,9 +87,14 @@ const Purchase = () => {
 
                 <input className='btn btn-primary' value='Order' type="submit" />
             </form>
-            <button className='btn btn-outline btn-primary px-5 py-3'>
-                <Link to="/">Back</Link>
-            </button>
+            <div className='flex justify-between '>
+                <button className='btn btn-outline btn-primary px-8 py-3'>
+                    <Link to="/">Back</Link>
+                </button>
+                <button className='btn btn-primary px-10 py-3'>
+                    <Link to={`/payment/${id}`}>Pay</Link>
+                </button>
+            </div>
         </div>
     );
 };

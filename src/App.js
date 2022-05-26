@@ -10,6 +10,7 @@ import Footer from './components/shared/Footer';
 import Header from './components/shared/Header';
 import RequireAuth from './components/shared/RequireAuth';
 import Purchase from './components/pages/Purchase/Purchase';
+import Payment from './components/pages/Payment/Payment';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
         <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase />
+          </RequireAuth>} />
+        <Route path='/payment/:id' element={
+          <RequireAuth>
+            <Payment />
           </RequireAuth>} />
         <Route path='*' element={<NotFound></NotFound>} />
       </Routes>
