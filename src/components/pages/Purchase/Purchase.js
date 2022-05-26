@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Success from '../../shared/Success';
 const Purchase = () => {
     const id = useParams().id;
     const [product, setProduct] = useState();
@@ -64,9 +65,9 @@ const Purchase = () => {
 
             {
                 success ?
-                    <div className='w-full h-full flex justify-center  items-center'>
-                        <p className='text-success text-3xl text-center'>successfully ordered</p>
-                    </div>
+                    <Success>
+                        Order added in your pending list. Please pay to complete.
+                    </Success>
                     :
                     <form className='p-5 mb-5 mt-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
                         <h3 className='text-4xl text-primary text-center font-semibold mb-5'>Confirm Order</h3>
