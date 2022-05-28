@@ -21,7 +21,7 @@ const MyOrders = () => {
     const handleCancel = (id, name) => {
         const confirm = window.confirm(`Are you sure to cancel ${name}?`)
         if (confirm) {
-            fetch(`https://car-parts-server.herokuapp.com/deleteorder/${id}`, {
+            fetch(`http://localhost:5000/allorders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
