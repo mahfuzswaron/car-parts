@@ -18,6 +18,7 @@ import ManageAllOrders from './components/pages/Dashboard/ManageAllOrders';
 import MakeAdmin from './components/pages/Dashboard/MakeAdmin';
 import AddProduct from './components/pages/Dashboard/AddProduct';
 import ManageProducts from './components/pages/Dashboard/ManageProducts';
+import RequireAdmin from './components/shared/RequireAdmin';
 
 function App() {
   return (
@@ -34,10 +35,20 @@ function App() {
           <Route path='myorders' element={<MyOrders />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='myprofile' element={<MyProfile />} />
-          <Route path='manageOrders' element={<ManageAllOrders />} />
-          <Route path='makeadmin' element={<MakeAdmin />} />
-          <Route path='addproduct' element={<AddProduct />} />
-          <Route path='manageproducts' element={<ManageProducts />} />
+          <Route path='manageOrders' element={<RequireAdmin>
+            <ManageAllOrders />
+          </RequireAdmin>} />
+          <Route path='makeadmin' element={
+            <RequireAdmin>
+              <MakeAdmin />
+            </RequireAdmin>
+          } />
+          <Route path='addproduct' element={<RequireAdmin>
+            <AddProduct />
+          </RequireAdmin>} />
+          <Route path='manageproducts' element={<RequireAdmin>
+            <ManageProducts />
+          </RequireAdmin>} />
         </Route>
 
         <Route path='/blogs' element={<Blogs />} />
