@@ -1,5 +1,6 @@
 import React from 'react';
 import Blog from './Blog';
+import Portfolio from './Portfolio';
 
 const Blogs = () => {
     return (
@@ -31,6 +32,8 @@ const Blogs = () => {
                 To make sure that the code is working well, we should write unit test.
                 `}
             ></Blog>
+
+            <Portfolio />
         </div>
     );
 };
