@@ -16,12 +16,30 @@ const Registar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
-
+    const addToDb = data => {
+        const { name, email } = data;
+        const user = {
+            name,
+            email,
+            role: 'user'
+        };
+        fetch('http://localhost:5000/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                email: data.email
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data));
+    }
     const onSubmit = async data => {
         console.log(data);
         const { name, email, password } = data;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
+        await addToDb(data);
         navigate(from, { replace: true });
 
     };

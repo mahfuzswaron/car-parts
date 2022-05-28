@@ -8,6 +8,24 @@ const SocialLogIn = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
+    const addToDb = data => {
+        const { name, email } = data;
+        const user = {
+            name,
+            email,
+            role: 'user'
+        };
+        fetch('http://localhost:5000/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                email: data.email
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data));
+    }
     if (error) {
         return (
             <div>
@@ -19,9 +37,14 @@ const SocialLogIn = () => {
         return <p>Loading...</p>;
     }
     if (user) {
+        console.log(user);
+        addToDb({
+            name: user.user.displayName,
+            email: user.user.email
+        })
         return (
             <div>
-                <p>Signed In User: {user.email}</p>
+                <p>Signed In User: {user.user.email}</p>
             </div>
         );
     }
@@ -29,7 +52,7 @@ const SocialLogIn = () => {
     return (
         <div>
             <button onClick={async () => {
-                await signInWithGoogle()
+                await signInWithGoogle();
                 navigate(from, { replace: true });
             }}
                 className='btn btn-outline btn-primary'>SIGN IN WITH GOOGLE</button>
