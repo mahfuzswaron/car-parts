@@ -19,8 +19,8 @@ const Header = () => {
     const logOut = <button onClick={() => signOut(auth)} className='btn btn-outline btn-neutral font-semibold'>LOG OUT</button>
 
     return (
-        <div className='' style={{ 'fontFamily': 'Poppins' }}>
-            <div className="navbar bg-white px-10 lg:px-20">
+        <div className='font-p'>
+            <div className="navbar bg-white px-5 lg:px-20">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <Link style={{ 'fontFamily': 'Oswald' }} className='font-semibold text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
+                    <Link style={{ 'fontFamily': 'Oswald' }} className='font-semibold text-xl lg:text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
