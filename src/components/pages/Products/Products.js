@@ -8,7 +8,7 @@ const Products = () => {
     const slicedProducts = products.slice(0, items);
     return (
         <section>
-            <div className='py-10 my-5 px-5 lg:px-20 '>
+            <div className='py-16 px-5 lg:px-20 bg-base-100'>
                 <h3 className='text-3xl lg:text-4xl uppercase text-center text-neutral hover:text-primary font-semibold mb-16 '>Products</h3>
                 <div className='flex justify-center mx-auto'>
                     <div
@@ -25,7 +25,11 @@ const Products = () => {
             {
                 items === 3 &&
                 <div className='flex justify-center mb-3'>
-                    <button onClick={() => setItems(9)} className='btn btn-primary rounded-xl'>See all</button>
+                    <button onClick={() => setItems(9)} className='btn btn-secondary w-3/12 rounded-full'>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+                        </svg>
+                    </button>
                 </div>
             }
         </section>
