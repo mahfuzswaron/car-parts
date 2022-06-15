@@ -22,7 +22,7 @@ import RequireAdmin from './components/shared/RequireAdmin';
 
 function App() {
   return (
-    <div>
+    <div >
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

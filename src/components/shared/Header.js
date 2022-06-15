@@ -12,14 +12,14 @@ const Header = () => {
     }
 
 
-    const home = <Link className='font-bold' to='/'>HOME</Link>
-    const dashboard = <Link className='font-bold' to='/dashboard'>DASHBOARD</Link>
-    const login = <Link className='font-bold btn btn-outline btn-primary' to='/login'>LOG IN</Link>
-    const blogs = <Link className='font-bold' to='/blogs'>BLOGS</Link>
-    const logOut = <button onClick={() => signOut(auth)} className='btn btn-outline btn-neutral font-bold'>LOG OUT</button>
+    const home = <Link className='font-semibold' to='/'>HOME</Link>
+    const dashboard = <Link className='font-semibold' to='/dashboard'>DASHBOARD</Link>
+    const login = <Link className='font-semibold btn btn-outline btn-primary' to='/login'>LOG IN</Link>
+    const blogs = <Link className='font-semibold' to='/blogs'>BLOGS</Link>
+    const logOut = <button onClick={() => signOut(auth)} className='btn btn-outline btn-neutral font-semibold'>LOG OUT</button>
 
     return (
-        <div className=''>
+        <div className='' style={{ 'fontFamily': 'Poppins' }}>
             <div className="navbar bg-white px-10 lg:px-20">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -41,7 +41,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <Link className='font-bold text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
+                    <Link style={{ 'fontFamily': 'Oswald' }} className='font-semibold text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
