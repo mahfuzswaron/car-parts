@@ -12,9 +12,9 @@ const Reviews = () => {
     }, [])
 
     return (
-        <section className='flex flex-col items-center'>
+        <section className='flex flex-col items-center px-5 lg:px-20'>
             <h3 className='text-4xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>
-            <div className="carousel carousel-center max-w-lg my-5 p-4 space-x-4 bg-neutral rounded-box">
+            <div className="carousel carousel-center w-2/3 space-x-4 bg-base-100 rounded-box border">
                 {
                     reviews.map(r => <ReviewCard
                         key={r._id}

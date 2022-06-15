@@ -11,7 +11,7 @@ const Home = () => {
             <Banner />
             <Products />
             <BusinessSummery />
-            {/* <Reviews /> */}
+            <Reviews />
         </div>
     );
 };
