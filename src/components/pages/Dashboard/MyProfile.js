@@ -10,7 +10,7 @@ const MyProfile = () => {
     const onSubmit = (data) => {
         const profile = data;
 
-        fetch('http://localhost:5000/profiles', {
+        fetch('https://car-parts-server.herokuapp.com/profiles', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

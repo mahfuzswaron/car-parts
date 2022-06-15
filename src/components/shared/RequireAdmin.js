@@ -7,7 +7,7 @@ const RequireAdmin = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const [fetchedUser, setFetchedUser] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://car-parts-server.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

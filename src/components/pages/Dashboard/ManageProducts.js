@@ -6,7 +6,7 @@ const ManageProducts = () => {
         const confirm = window.confirm('Are you sure to remove this product?');
         if (confirm) {
 
-            fetch(`http://localhost:5000/deleteproduct/${id}`, {
+            fetch(`https://car-parts-server.herokuapp.com/deleteproduct/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -23,7 +23,7 @@ const Registar = () => {
             email,
             role: 'user'
         };
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-parts-server.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

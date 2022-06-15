@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/allorders`)
+        fetch(`https://car-parts-server.herokuapp.com/allorders`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders]);
 
     const handleShip = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://car-parts-server.herokuapp.com/orders/${id}`;
         console.log(id, 'shipped');
         fetch(url, {
             method: 'PUT'
