@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessSummery = () => {
     return (
-        <section className='my-5 px-5 lg:px-20 bg-white py-16'>
+        <section className='px-5 lg:px-20 bg-white py-16'>
             <h3
                 className='text-3xl lg:text-4xl font-semibold mb-16 text-center text-neutral hover:text-primary uppercase'
             >

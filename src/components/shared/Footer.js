@@ -7,15 +7,16 @@ const Footer = () => {
     const blogs = <Link to='/blogs'>BLOGS</Link>
     const products = <Link to='/products'>PRODUCTS</Link>
     return (
-        <footer className="footer p-10 bg-base-300 text-base-content">
+        <footer className="footer p-10 bg-neutral  text-base-100 font-light font-p">
             <div>
                 <span className="footer-title">Services</span>
+
                 {blogs}
                 {products}
                 {dashboard}
                 {login}
             </div>
-            <div>
+            <div className='font-p'>
                 <span className="footer-title">Company</span>
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>

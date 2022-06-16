@@ -15,8 +15,8 @@ const Reviews = () => {
     if (!reviews || !reviews.length) return <p>loading...</p>
 
     return (
-        <section className='flex flex-col items-center py-20 w-full'>
-            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold my-10 '>Happy Customers say</h3>
+        <section className='flex flex-col bg-white items-center lg:py-20 py-5 w-full'>
+            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold mb-16 '>Happy Customers say</h3>
 
             <div className='relative w-full'>
                 <img className='w-full' src="https://i.ibb.co/r4zChJh/customer-review.jpg" alt="customer-review" border="0"></img>
