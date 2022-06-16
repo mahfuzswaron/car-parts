@@ -11,11 +11,7 @@ const Login = () => {
                 <EmailLogin />
             </div>
             <div className='flex '>
-                <div>
-                </div>
-                OR
-                <div>
-                </div>
+                <p className='font-p uppercase text-lg'>or</p>
             </div>
             <div>
                 <SocialLogIn />

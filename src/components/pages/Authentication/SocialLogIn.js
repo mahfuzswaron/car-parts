@@ -55,7 +55,7 @@ const SocialLogIn = () => {
                 await signInWithGoogle();
                 navigate(from, { replace: true });
             }}
-                className='btn btn-outline btn-primary'>SIGN IN WITH GOOGLE</button>
+                className='btn btn-outline btn-primary font-p'>SIGN IN WITH GOOGLE</button>
         </div>
     );
 };
