@@ -18,6 +18,7 @@ const Header = () => {
     const login = <Link className='font-semibold btn btn-outline btn-primary' to='/login'>LOG IN</Link>
     const blogs = <Link className='font-semibold' to='/blogs'>BLOGS</Link>
     const logOut = <button onClick={() => signOut(auth)} className='btn btn-outline btn-neutral font-semibold'>LOG OUT</button>
+    const products = <Link className='font-semibold' to='/products'>PRODUCTS</Link>
 
     return (
         <div className='font-p'>
@@ -29,6 +30,7 @@ const Header = () => {
                         </label>
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>{home}</li>
+                            <li>{products}</li>
                             <li>{blogs}</li>
                             {
                                 user?.email ?
@@ -47,6 +49,7 @@ const Header = () => {
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li>{home}</li>
+                        <li>{products}</li>
                         <li>{blogs}</li>
                         {
                             user?.email ?

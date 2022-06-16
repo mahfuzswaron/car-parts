@@ -64,7 +64,7 @@ const Registar = () => {
     };
 
     return (
-        <form className='px-5 pt-5 pb-24  w-2/3 mx-auto' onSubmit={handleSubmit(onSubmit)}>
+        <form className='px-5 pt-5 pb-24  lg:w-2/3 w-full mx-auto' onSubmit={handleSubmit(onSubmit)}>
             <h3 className='lg:text-4xl text-3xl text-neutral hover:text-primary text-center font-semibold mb-5 uppercase '>Please Registar</h3>
             <div className='grid grid-cols-1 gap-2 font-p'>
                 <input type='text' placeholder='Full Name' className='input input-bordered w-full ' {...register("name", {

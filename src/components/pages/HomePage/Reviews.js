@@ -17,8 +17,10 @@ const Reviews = () => {
 
     return (
         <section className='flex flex-col bg-white items-center lg:py-20 py-5 w-full'>
-            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold mb-16 '>
-                Happy Customers say
+            <h3
+                className='text-3xl lg:text-4xl font-semibold mb-16 text-center text-neutral hover:text-primary uppercase'
+            >
+                Happy customers say
             </h3>
 
             <div className='relative w-full'>
@@ -41,9 +43,3 @@ const Reviews = () => {
 
 export default Reviews;
 
-
-{/* <div className="flex justify-center w-full py-2 gap-2 my-5">
-    {
-        reviews.map((a, i) => <a key={a._id} href={`#${a._id}`} className="btn btn-xs btn-ghost rounded-full">{i + 1}</a>)
-    }
-</div> */}

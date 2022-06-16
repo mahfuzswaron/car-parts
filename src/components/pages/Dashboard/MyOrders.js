@@ -48,7 +48,7 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map((order, index) => <tr className={index % 2 === 0 && 'bg-base-200'}>
+                        orders.map((order, index) => <tr className={` h-10  ${index % 2 === 0 && 'bg-base-200'}`}>
                             <td>{index + 1}</td>
                             <td>{order.name}</td>
                             <td>{order.quantity}</td>

@@ -57,8 +57,8 @@ const Purchase = () => {
     const { name, quantity, min_quantity, price } = product;
 
     return (
-        <div className='w-1/2 mx-auto'>
-            <div>
+        <div className='w-1/2 mx-auto py-20'>
+            <div className='font-p'>
                 <h1 className='text-center text-xl'>Hi, {user?.displayName},</h1>
                 <p className='text-center '>You are purchasing <strong className='text-primary'>{name}</strong> with this mail: <em>{user?.email}</em></p>
             </div>
@@ -69,44 +69,46 @@ const Purchase = () => {
                         Order added in your pending list. Please pay to complete.
                     </Success>
                     :
-                    <form className='p-5 mb-5 mt-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
-                        <h3 className='text-4xl text-primary text-center font-semibold mb-5'>Confirm Order</h3>
-                        <input type='text' placeholder='Your Location' className='input input-bordered w-full ' {...register("location", {
-                            required: true
-                        })} />
-                        <p className='text-error'>{errors.location?.type === 'required' && "Location is required"}</p>
+                    <form className='p-5 mb-5 mt-5 rounded-md ' onSubmit={handleSubmit(onSubmit)}>
+                        <h3 className='text-3xl lg:text-4xl text-neutral hover:text-primary text-center font-semibold mb-5 uppercase '>Confirm Order</h3>
+                        <div className='font-p grid grid-cols-1 gap-2'>
+                            <input type='text' placeholder='Your Location' className='input input-bordered w-full ' {...register("location", {
+                                required: true
+                            })} />
+                            <p className='text-error'>{errors.location?.type === 'required' && "Location is required"}</p>
 
-                        <input type='tel' placeholder='Your Contact Number' className='input input-bordered w-full' {...register("phone", {
-                            required: true
-                        })} />
-                        <p className='text-error'>{errors.phone?.type === 'required' && "Phone Number is required"}</p>
+                            <input type='tel' placeholder='Your Contact Number' className='input input-bordered w-full' {...register("phone", {
+                                required: true
+                            })} />
+                            <p className='text-error'>{errors.phone?.type === 'required' && "Phone Number is required"}</p>
 
-                        <input type='number' placeholder={`Product Quantity (${min_quantity} - ${quantity})`} onKeyUp={(e) => {
-                            setProrductPrice(e.target.value * price)
-                        }} className='input input-bordered w-full' {...register("orderedQuantity", {
-                            required: true,
-                            min: min_quantity,
-                            max: quantity
-                        })} />
+                            <input type='number' placeholder={`Product Quantity (${min_quantity} - ${quantity})`} onKeyUp={(e) => {
+                                setProrductPrice(e.target.value * price)
+                            }} className='input input-bordered w-full' {...register("orderedQuantity", {
+                                required: true,
+                                min: min_quantity,
+                                max: quantity
+                            })} />
 
-                        {
-                            errors?.orderedQuantity &&
-                            <>
-                                <p className='text-error'>{errors.orderedQuantity?.type === 'required' && "Order Quantity is required"}</p>
-                                <p className='text-error'>{(errors.orderedQuantity?.type === 'min' || errors.orderedQuantity?.type === 'max') && `Order Quantity is must be within ${min_quantity} - ${quantity}`}</p>
-                            </>
+                            {
+                                errors?.orderedQuantity &&
+                                <>
+                                    <p className='text-error'>{errors.orderedQuantity?.type === 'required' && "Order Quantity is required"}</p>
+                                    <p className='text-error'>{(errors.orderedQuantity?.type === 'min' || errors.orderedQuantity?.type === 'max') && `Order Quantity is must be within ${min_quantity} - ${quantity}`}</p>
+                                </>
 
-                        }
-                        <p className='text-success'>{productPrice > 0 && `Subtotal: $${productPrice}`}</p>
+                            }
+                            <p className='text-success'>{productPrice > 0 && `Subtotal: $${productPrice}`}</p>
+                        </div>
 
-                        <input className='btn btn-primary' value='Order' type="submit" />
+                        <input className='btn btn-primary mt-2 w-full text-lg' value='Order' type="submit" />
                     </form>
             }
             <div className='flex justify-between '>
                 <button className='btn btn-outline btn-primary px-8 py-3'>
                     <Link to="/">Back</Link>
                 </button>
-                <button className='btn btn-primary px-10 py-3'>
+                <button className='btn btn-success text-white px-10 py-3'>
                     <Link to={`/payment/${id}`}>Pay</Link>
                 </button>
             </div>

@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
-import auth from '../../firebase.init';
-
+import useUser from '../../hooks/useUser';
+import Loader from "./Loader";
 const RequireAdmin = ({ children }) => {
-    const [user, loading] = useAuthState(auth);
-    const [fetchedUser, setFetchedUser] = useState({});
-    useEffect(() => {
-        fetch(`https://car-parts-server.herokuapp.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setFetchedUser(data)
-            })
-    }, [user])
+    const [fetchedUser, loading] = useUser([]);
 
     if (!fetchedUser?.role || loading) {
-        return <p>Loading...</p>
+        return <Loader />
     }
     if (fetchedUser.role !== 'admin') {
         return <Navigate to='/dashboard' />

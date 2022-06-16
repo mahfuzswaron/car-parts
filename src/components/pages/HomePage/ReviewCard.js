@@ -13,7 +13,7 @@ const ReviewCard = ({ review }) => {
 
 
     return (
-        <div id={_id} className='font-p carousel-item w-full h-full px-3 mb-0 lg:pb-32 pb-5 bg-opacity-50 bg-secondary rounded-box grid grid-cols-1 justify-evenly gap-0'>
+        <div id={_id} className='font-p carousel-item w-full h-full px-3 mb-0 lg:pb-32 pb-5 bg-opacity-75 bg-secondary rounded-box grid grid-cols-1 justify-evenly gap-0'>
             <div className='flex items-start space-x-4 pt-3  '>
                 {/* profile pic  */}
                 <figure className=' mask mask-circle w-12 h-auto'>
@@ -22,7 +22,7 @@ const ReviewCard = ({ review }) => {
 
                 {/* name and rating */}
                 <div className='flex flex-col items-start'>
-                    <h3 className='lg:text-md  text-sm font-semibold text-neutral  w-full text-ellipsis'>
+                    <h3 className='lg:text-md  text-sm font-semibold text-neutral text-left  w-full text-ellipsis'>
                         {name.split(" ")[0]}
                     </h3>
                     <div>
@@ -31,6 +31,9 @@ const ReviewCard = ({ review }) => {
                             emptySymbol={emptyStar}
                             fullSymbol={fullStar}
                             readonly
+                            autoPlay={true}
+                            interval={2000}
+                            swipeable
                         />
                     </div>
                 </div>
@@ -38,7 +41,6 @@ const ReviewCard = ({ review }) => {
 
             {/* review description  */}
             <div className='lg:text-md text-sm overflow-y-scroll lg:overflow-y-visible max-h-10 lg:max-h-30 lg:mt-5'>
-                this is a big description that user didn't post. the fazil developer has written in code. he tried to make this so longer. but couldn't. the failure.
                 {description}
             </div>
         </div>

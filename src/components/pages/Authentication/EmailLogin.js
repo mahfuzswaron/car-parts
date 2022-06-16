@@ -37,7 +37,7 @@ const EmailLogin = () => {
 
 
     return (
-        <form className='p-5 rounded-md ' onSubmit={handleSubmit(onSubmit)}>
+        <form className='p-5 ' onSubmit={handleSubmit(onSubmit)}>
             <h3 className='lg:text-4xl text-3xl text-neutral  hover:text-primary text-center font-semibold mb-5 uppercase'>Please Log in</h3>
             <div className='font-p grid grid-cols-1 gap-2'>
                 <input type='email' placeholder='Email Adress' className='input input-bordered w-full ' {...register("email", {

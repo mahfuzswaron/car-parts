@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
+import Loader from '../../shared/Loader';
 import Success from '../../shared/Success';
 
 const AddReview = () => {
@@ -37,7 +38,7 @@ const AddReview = () => {
     }
 
     if (loading) {
-        return <p>Loading...</p>
+        return <Loader />
     }
     return (
         <section>
@@ -49,7 +50,7 @@ const AddReview = () => {
                     :
                     <div>
                         <h3 className='text-3xl font-medium'>Add a review</h3>
-                        <form className='shadow-md p-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
+                        <form className=' p-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
                             <input type='number' placeholder='Rate out of 5' className='input input-bordered w-full ' {...register("ratings", {
                                 required: true
                             })} />
