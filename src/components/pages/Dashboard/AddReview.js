@@ -49,8 +49,8 @@ const AddReview = () => {
                     </Success>
                     :
                     <div>
-                        <h3 className='text-3xl font-medium'>Add a review</h3>
-                        <form className=' p-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
+                        <h3 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase '>Add a review</h3>
+                        <form className=' font-p p-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
                             <input type='number' placeholder='Rate out of 5' className='input input-bordered w-full ' {...register("ratings", {
                                 required: true
                             })} />

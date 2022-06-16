@@ -16,7 +16,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h3 className='text-4xl text-primary text-center font-semibold mb-5'>Add Product</h3>
+            <h3 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase '>Add Product</h3>
             <form className='p-5 mb-5 mt-5 rounded-md grid grid-cols-1 gap-3' onSubmit={handleSubmit(onSubmit)}>
 
                 <input type='text' placeholder='Product' className='input input-bordered w-full ' {...register("name", {

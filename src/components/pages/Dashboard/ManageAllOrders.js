@@ -18,11 +18,11 @@ const ManageAllOrders = () => {
             .then(data => console.log(data))
     }
     return (
-        <div>
-            <h3 className='font-medium lg:text-3xl text-2xl text-primary uppercase'>Manage All Orders</h3>
-            <table className='w-full my-5  font-p'>
+        <div className='py-5 lg:py-10'>
+            <h1 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase'>Manage All Orders</h1>
+            <table className='w-full my-5 text-xs lg:text-lg  font-p'>
                 <thead>
-                    <tr className='text-sm lg:text-lg'>
+                    <tr className=' '>
                         <td></td>
                         <td className='font-bold text-primary'>Name</td>
                         <td className='font-bold text-primary'>Quantity</td>
@@ -30,7 +30,7 @@ const ManageAllOrders = () => {
                         <td className='font-bold text-primary'>Status</td>
                     </tr>
                 </thead>
-                <tbody className='text-xs lg:text-lg'>
+                <tbody className=''>
                     {
                         orders.map((order, index) => <tr className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
@@ -40,7 +40,7 @@ const ManageAllOrders = () => {
                             <td className={
                                 order.status === 'pending' ? 'text-warning ' : 'text-success'}>{order.status}
                             </td>
-                            <td>{order.status !== 'shipped' && <button onClick={() => handleShip(order._id)} className='btn btn-xs btn-success text-white'>
+                            <td>{order.status !== 'shipped' && <button onClick={() => handleShip(order._id)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white'>
                                 ship
                             </button>}
                             </td>

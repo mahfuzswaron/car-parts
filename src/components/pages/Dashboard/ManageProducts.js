@@ -15,9 +15,9 @@ const ManageProducts = () => {
 
     }
     return (
-        <div>
-            <h1 className='font-medium text-3xl' >Manage Products</h1>
-            <table className='w-full my-5'>
+        <div className='py-5 lg:py-10'>
+            <h1 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase' >Manage Products</h1>
+            <table className='w-full my-5 text-xs lg:text-lg  font-p'>
                 <thead>
                     <tr className=''>
                         <td></td>
@@ -26,15 +26,15 @@ const ManageProducts = () => {
                         <td className='font-bold text-primary'>Quantity</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className=''>
                     {
-                        products.map((product, index) => <tr key={product._id} className={index % 2 === 0 && 'bg-base-200'}>
+                        products.map((product, index) => <tr key={product._id} className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                             <td>{product.quantity}</td>
-                            <td><button onClick={() => handleRemove(product._id)} className='btn btn-xs btn-error text-white'>
-                                Remove
+                            <td><button onClick={() => handleRemove(product._id)} className='btn btn-xs text-[0.5rem]  btn-error rounded-full '>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
                             </td>
 

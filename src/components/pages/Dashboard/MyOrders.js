@@ -34,9 +34,9 @@ const MyOrders = () => {
     }
 
     return (
-        <section>
-            <h3 className='font-medium text-3xl '>My Orders</h3>
-            <table className='w-full my-5'>
+        <section className='py-5 lg:py-10'>
+            <h3 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase '>My Orders</h3>
+            <table className='w-full my-5 text-xs lg:text-lg  font-p'>
                 <thead>
                     <tr className=''>
                         <td></td>
@@ -48,7 +48,7 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map((order, index) => <tr className={` h-10  ${index % 2 === 0 && 'bg-base-200'}`}>
+                        orders.map((order, index) => <tr className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
                             <td>{order.name}</td>
                             <td>{order.quantity}</td>
@@ -56,12 +56,14 @@ const MyOrders = () => {
                             <td className={
                                 order.status === 'pending' ? 'text-warning' : 'text-success'}>{order.status}
                             </td>
-                            <td>{order.status === 'pending' && <button className='btn btn-xs btn-success text-white'>
+                            <td>{order.status === 'pending' && <button className='btn btn-xs btn-success my-2 text-white'>
                                 Pay
                             </button>}
                             </td>
                             <td>
-                                <button onClick={() => handleCancel(order._id, order.name)} className='btn btn-xs btn-error'>cancel</button>
+                                <button onClick={() => handleCancel(order._id, order.name)} className='my-2 btn btn-xs text-[0.5rem]  btn-error rounded-full '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                </button>
                             </td>
                         </tr>)
                     }

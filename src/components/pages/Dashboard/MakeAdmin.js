@@ -30,9 +30,9 @@ const MakeAdmin = () => {
             .then(data => console.log(data));
     }
     return (
-        <div>
-            <h1>Make Admin</h1>
-            <table className='w-full my-5'>
+        <div className='py-5 lg:py-10'>
+            <h1 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase' >Make Admin</h1>
+            <table className='w-full my-5 text-xs lg:text-lg  font-p'>
                 <thead>
                     <tr className=''>
                         <td></td>
@@ -41,14 +41,14 @@ const MakeAdmin = () => {
                         <td className='font-bold text-primary'>Role</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className=''>
                     {
-                        users.map((user, index) => <tr key={user._id} className={index % 2 === 0 && 'bg-base-200'}>
+                        users.map((user, index) => <tr key={user._id} className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.role}</td>
-                            <td>{user.role === 'user' && <button onClick={() => handlMakeAdmin(user)} className='btn btn-xs btn-success text-white'>
+                            <td>{user.role === 'user' && <button onClick={() => handlMakeAdmin(user)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white'>
                                 Make Admin
                             </button>}
                             </td>

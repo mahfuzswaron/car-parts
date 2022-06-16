@@ -30,7 +30,7 @@ const MyProfile = () => {
     return (
         <section>
 
-            <h3 className='font-medium text-3xl '>My Profile</h3>
+            <h3 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase '>My Profile</h3>
             {
                 success && <p className='text-success text-left font-medium'>changes saved</p>
             }
