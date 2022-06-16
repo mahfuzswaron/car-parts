@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import ReviewCard from './ReviewCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Loader from '../../shared/Loader';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -12,11 +13,13 @@ const Reviews = () => {
 
     }, [reviews])
 
-    if (!reviews || !reviews.length) return <p>loading...</p>
+    if (!reviews || !reviews.length) return <Loader />
 
     return (
         <section className='flex flex-col bg-white items-center lg:py-20 py-5 w-full'>
-            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold mb-16 '>Happy Customers say</h3>
+            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold mb-16 '>
+                Happy Customers say
+            </h3>
 
             <div className='relative w-full'>
                 <img className='w-full' src="https://i.ibb.co/r4zChJh/customer-review.jpg" alt="customer-review" border="0"></img>

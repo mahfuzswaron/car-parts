@@ -13,14 +13,14 @@ const ProductCard = ({ product }) => {
                 <h2 className="card-title justify-center uppercase text-neutral">{name}</h2>
                 <p className='text-center font-p'>{description}</p>
                 <div className='flex  w-full font-p uppercase'>
-                    <p><span className='font-medium'>{quantity}</span> Available </p>
+                    <p><span className='font-medium text-primary'>{quantity}</span> Available </p>
                     <p className='text-primary text-center text-xl'  >|</p>
-                    <p className='text-right'>Order min<span className='font-medium '> {min_quantity}</span></p>
+                    <p className='text-right'>Order min<span className='font-medium text-primary'> {min_quantity}</span></p>
                 </div>
                 <p className='font-p text-center uppercase'>Per piece <span className='font-medium'>${price}</span></p>
 
                 <div className="w-full ">
-                    <button onClick={() => navigate(`/purchase/${_id}`)} className="btn btn-primary w-full rounded-full">Buy Now</button>
+                    <button onClick={() => navigate(`/purchase/${_id}`)} className="btn btn-primary w-full rounded-full text-lg">Buy Now</button>
                 </div>
             </div>
         </div>

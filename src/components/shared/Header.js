@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import Loader from './Loader';
 
 const Header = () => {
     const [user, loading] = useAuthState(auth);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loader />
     }
 
 

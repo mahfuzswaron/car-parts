@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import useProducts from '../../../hooks/useProducts';
 import ProductCard from './ProductCard';
+import Loader from '../../shared/Loader';
 
 const Products = () => {
     const [products] = useProducts([]);
     const [items, setItems] = useState(3)
     const slicedProducts = products.slice(0, items);
+    if (!products || !products.length) return <Loader />
     return (
         <section>
             <div className='py-16 px-5 lg:px-20 bg-base-100'>
