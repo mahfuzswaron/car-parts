@@ -15,22 +15,22 @@ const Reviews = () => {
     if (!reviews || !reviews.length) return <p>loading...</p>
 
     return (
-        <section className='flex flex-col items-center relative'>
-            <h3 className='text-4xl text-center text-primary font-semibold mb-10 mt-5'>Happy Customers say</h3>
+        <section className='flex flex-col items-center py-20 w-full'>
+            <h3 className='lg:text-4xl text-3xl uppercase text-center hover:text-primary text-neutral font-semibold my-10 '>Happy Customers say</h3>
 
-            <img className='w-full' src="https://i.ibb.co/r4zChJh/customer-review.jpg" alt="customer-review" border="0"></img>
+            <div className='relative w-full'>
+                <img className='w-full' src="https://i.ibb.co/r4zChJh/customer-review.jpg" alt="customer-review" border="0"></img>
 
-            <Carousel className="w-1/2 bg-primary rounded-box  absolute bottom-96  shadow-lg" showArrows={true}  >
-                {
-                    reviews.map(r => <ReviewCard
-                        key={r._id}
-                        review={r}
-                    ></ReviewCard>)
-                }
+                <Carousel className="w-1/2 bg-transparent rounded-box absolute lg:top-72 lg:right-20 top-5 right-5  shadow-lg" showArrows={true}  >
+                    {
+                        reviews.map(r => <ReviewCard
+                            key={r._id}
+                            review={r}
+                        ></ReviewCard>)
+                    }
+                </Carousel>
 
-
-            </Carousel>
-
+            </div>
 
         </section>
     );
