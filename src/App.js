@@ -19,6 +19,7 @@ import MakeAdmin from './components/pages/Dashboard/MakeAdmin';
 import AddProduct from './components/pages/Dashboard/AddProduct';
 import ManageProducts from './components/pages/Dashboard/ManageProducts';
 import RequireAdmin from './components/shared/RequireAdmin';
+import ComingSoon from './components/pages/Blogs/ComingSoon';
 
 function App() {
   return (
@@ -51,7 +52,7 @@ function App() {
           </RequireAdmin>} />
         </Route>
 
-        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blogs' element={<ComingSoon />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registar' element={<Registar />} />
         <Route path='/purchase/:id' element={
