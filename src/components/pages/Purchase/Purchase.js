@@ -57,7 +57,7 @@ const Purchase = () => {
     const { name, quantity, min_quantity, price } = product;
 
     return (
-        <div className='w-1/2 mx-auto py-20'>
+        <div className='w-full lg:w-1/2 mx-auto py-20'>
             <div className='font-p'>
                 <h1 className='text-center text-xl'>Hi, {user?.displayName},</h1>
                 <p className='text-center '>You are purchasing <strong className='text-primary'>{name}</strong> with this mail: <em>{user?.email}</em></p>
@@ -69,7 +69,7 @@ const Purchase = () => {
                         Order added in your pending list. Please pay to complete.
                     </Success>
                     :
-                    <form className='p-5 mb-5 mt-5 rounded-md ' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='p-5 mb-5 mt-5 ' onSubmit={handleSubmit(onSubmit)}>
                         <h3 className='text-3xl lg:text-4xl text-neutral hover:text-primary text-center font-semibold mb-5 uppercase '>Confirm Order</h3>
                         <div className='font-p grid grid-cols-1 gap-2'>
                             <input type='text' placeholder='Your Location' className='input input-bordered w-full ' {...register("location", {

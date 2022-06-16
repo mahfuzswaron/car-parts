@@ -19,10 +19,10 @@ const ManageAllOrders = () => {
     }
     return (
         <div>
-            <h3 className='font-medium text-3xl '>Manage All Orders</h3>
-            <table className='w-full my-5'>
+            <h3 className='font-medium lg:text-3xl text-2xl text-primary uppercase'>Manage All Orders</h3>
+            <table className='w-full my-5  font-p'>
                 <thead>
-                    <tr className=''>
+                    <tr className='text-sm lg:text-lg'>
                         <td></td>
                         <td className='font-bold text-primary'>Name</td>
                         <td className='font-bold text-primary'>Quantity</td>
@@ -30,11 +30,11 @@ const ManageAllOrders = () => {
                         <td className='font-bold text-primary'>Status</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='text-xs lg:text-lg'>
                     {
-                        orders.map((order, index) => <tr className={index % 2 === 0 && 'bg-base-200'}>
+                        orders.map((order, index) => <tr className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
-                            <td>{order.name}</td>
+                            <td className=' '>{order.name}</td>
                             <td>{order.quantity}</td>
                             <td>{parseInt(order.quantity) * parseInt(order.price)}</td>
                             <td className={

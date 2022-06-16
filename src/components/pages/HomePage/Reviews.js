@@ -26,7 +26,8 @@ const Reviews = () => {
             <div className='relative w-full'>
                 <img className='w-full' src="https://i.ibb.co/r4zChJh/customer-review.jpg" alt="customer-review" border="0"></img>
 
-                <Carousel className="w-1/2 bg-transparent rounded-box absolute lg:top-72 lg:right-20 top-5 right-5  shadow-lg" showArrows={true}  >
+                <Carousel className="w-1/2 bg-transparent rounded-box absolute lg:top-72 lg:right-20 top-5 right-5  shadow-lg"
+                    showArrows={true} showThumbs={false} >
                     {
                         reviews.map(r => <ReviewCard
                             key={r._id}

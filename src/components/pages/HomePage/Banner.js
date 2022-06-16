@@ -9,11 +9,11 @@ const Banner = () => {
                 src='https://i.ibb.co/BngB2v3/croped-banner-car.jpg' alt='' />
 
             <div className='z-1 absolute ml-5 lg:pl-20 text-secondary'>
-                <h1 className='lg:text-7xl text-lg  font-semibold'>Welcome to <br></br><span className='lg:text-8xl text-xl text-primary lg:-ml-1'>CAR PARTS</span> </h1>
+                <h1 className='lg:text-7xl text-lg  font-semibold uppercase'>Welcome to <br></br><span className='lg:text-8xl text-xl text-primary lg:-ml-1'>CAR PARTS</span> </h1>
                 <p className='lg:text-xl text-xs lg:my-3 my-1 font-p w-1/2'>
                     {
-                        `Manufacturing car? Don't thing about parts. 
-                        You are in the Parts Universe
+                        `Manufacturing car? Don't think about parts. 
+                        You are in the Parts Universe.
                         `
                     }
                 </p>
