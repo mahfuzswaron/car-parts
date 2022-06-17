@@ -48,7 +48,7 @@ const AddProduct = () => {
                     required: true
                 })} />
                 <p className='text-error'>{errors.price?.type === 'required' && "Name is required"}</p>
-                <input className='btn btn-primary' value='Add' type="submit" />
+                <input className='btn btn-primary rounded-full' value='Add' type="submit" />
             </form>
         </div>
     );

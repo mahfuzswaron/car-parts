@@ -49,7 +49,7 @@ const MakeAdmin = () => {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.role}</td>
-                            <td>{user.role === 'user' && <button onClick={() => handlMakeAdmin(user)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white'>
+                            <td>{user.role === 'user' && <button onClick={() => handlMakeAdmin(user)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white rounded-full'>
                                 Make Admin
                             </button>}
                             </td>

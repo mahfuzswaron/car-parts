@@ -57,7 +57,7 @@ const AddReview = () => {
                             <textarea type='text' placeholder='shrot description' className='input input-bordered w-full' {...register("description", {
                                 required: true,
                             })} />
-                            <input className='btn btn-primary' value='Post' type="submit" />
+                            <input className='btn btn-primary rounded-full' value='Post' type="submit" />
 
                         </form>
                     </div>

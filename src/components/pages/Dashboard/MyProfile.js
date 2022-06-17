@@ -34,7 +34,7 @@ const MyProfile = () => {
             {
                 success && <p className='text-success text-left font-medium'>changes saved</p>
             }
-            <form className='p-5 rounded-md grid grid-cols-1 gap-3 w-2/3 ' onSubmit={handleSubmit(onSubmit)}>
+            <form className='p-5 rounded-md grid grid-cols-1 gap-3 lg:w-2/3 w-full font-p ' onSubmit={handleSubmit(onSubmit)}>
                 <label className='label-text' >Your Name</label>
                 <input type='text' placeholder='Full Name' className='input input-bordered w-full ' {...register("name")} />
 
@@ -48,12 +48,12 @@ const MyProfile = () => {
                 <input type='text' placeholder='Your Adress' className='input input-bordered w-full ' {...register("location")} />
 
                 <label className='label-text' >Phone</label>
-                <input type='tel' placeholder='Your Phone Number' className='input input-bordered w-full ' {...register("location")} />
+                <input type='tel' placeholder='Your Phone Number' className='input input-bordered w-full  ' {...register("location")} />
 
                 <label className='label-text' >LinkedIn Profile</label>
                 <input type='text' placeholder='LinkedIn Profile Link' className='input input-bordered w-full ' {...register("socialLink")} />
 
-                <input className='btn btn-primary w-48' value='Save' type="submit" />
+                <input className='btn btn-primary lg:w-48 w-full rounded-full' value='Save' type="submit" />
             </form>
         </section>
     );

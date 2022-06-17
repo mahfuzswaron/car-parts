@@ -57,7 +57,7 @@ const MyOrders = () => {
                             <td className={
                                 order.status === 'pending' ? 'text-warning' : 'text-success'}>{order.status}
                             </td>
-                            <td>{order.status === 'pending' && <button className='btn btn-xs btn-success my-2 text-white'>
+                            <td>{order.status === 'pending' && <button className='btn btn-xs btn-success rounded-full my-2 text-white'>
                                 Pay
                             </button>}
                             </td>

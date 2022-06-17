@@ -40,7 +40,7 @@ const ManageAllOrders = () => {
                             <td className={
                                 order.status === 'pending' ? 'text-warning ' : 'text-success'}>{order.status}
                             </td>
-                            <td>{order.status !== 'shipped' && <button onClick={() => handleShip(order._id)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white'>
+                            <td>{order.status !== 'shipped' && <button onClick={() => handleShip(order._id)} className='btn btn-xs text-[0.5rem] p-1 lg:text-xs lg:px-3 btn-success text-white rounded-full'>
                                 ship
                             </button>}
                             </td>
