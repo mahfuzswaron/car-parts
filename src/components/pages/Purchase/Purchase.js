@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loader from '../../shared/Loader';
 import Success from '../../shared/Success';
 const Purchase = () => {
     const id = useParams().id;
@@ -52,7 +53,7 @@ const Purchase = () => {
     };
 
     if (loading || !product) {
-        return <p>Loading...</p>;
+        return <Loader />
     }
     const { name, quantity, min_quantity, price } = product;
 

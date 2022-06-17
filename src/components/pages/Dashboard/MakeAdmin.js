@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loader from '../../shared/Loader';
 
 const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const MakeAdmin = () => {
             .then(data => setUsers(data))
     }, [users]);
     if (!users) {
-        return <p>Loading...</p>
+        return <Loader />
     };
 
     const handlMakeAdmin = (user) => {

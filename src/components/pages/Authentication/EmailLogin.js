@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loader from '../../shared/Loader';
 
 const EmailLogin = () => {
     const [
@@ -22,15 +23,8 @@ const EmailLogin = () => {
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
 
-    // if (error) {
-    //     return (
-    //         <div>
-    //             <p>Error: {error.message}</p>
-    //         </div>
-    //     );
-    // }
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loader />
     }
 
 

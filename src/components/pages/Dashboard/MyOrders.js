@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loader from '../../shared/Loader';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -30,7 +31,7 @@ const MyOrders = () => {
     }
 
     if (loading) {
-        return <p>loading...</p>
+        return <Loader />
     }
 
     return (
