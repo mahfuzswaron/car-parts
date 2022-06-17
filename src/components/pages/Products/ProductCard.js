@@ -6,8 +6,8 @@ const ProductCard = ({ product }) => {
     const navigate = useNavigate();
     return (
         <div className="card max-w-sm bg-white shadow-xl">
-            <figure className="px-3 pt-3 w-full h-1/2">
-                <img src={img} alt={name} className="rounded-xl" />
+            <figure className="px-3 pt-3 w-full h-1/2 overflow-clip">
+                <img src={img} alt={name} className="rounded-xl hover:scale-110 ease-in duration-200" />
             </figure>
             <div className="card-body text-left ">
                 <h2 className="card-title justify-center uppercase text-neutral">{name}</h2>
