@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
-import useUser from '../../../hooks/useUser';
+import { fetchUser } from '../../../app/Slices/userSlice';
 import Loader from '../../shared/Loader';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 
 const Dashboard = () => {
+    const dispatch = useDispatch();
+    const [firebaseUser, firebaseLoading] = useAuthState(auth);
+    const { isloading, user } = useSelector((state) => state.user);
 
-    const [fetchedUser, loading] = useUser([]);
-    if (loading) return <Loader />
+    useEffect(() => {
+        dispatch(fetchUser(firebaseUser))
+    }, [firebaseUser, dispatch])
+
+    if (isloading || firebaseLoading) return <Loader />
 
     return (
         <div>
@@ -30,14 +39,14 @@ const Dashboard = () => {
                         <ul className="menu p-4 rounded overflow-y-auto w-80 bg-white text-base-content">
 
                             {
-                                fetchedUser?.role === "user" &&
+                                user?.role === "user" &&
                                 <>
                                     <li><Link to="myorders">My Orders</Link></li>
                                     <li><Link to="addreview">Add Review</Link></li>
                                 </>
                             }
                             {
-                                fetchedUser?.role === 'admin' &&
+                                user?.role === 'admin' &&
                                 <>
                                     <li><Link to="manageorders">Manage Orders</Link></li>
                                     <li><Link to="addproduct">Add Product</Link></li>
