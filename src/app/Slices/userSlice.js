@@ -4,7 +4,6 @@ export const fetchUser = createAsyncThunk(
     "user/fetchUser",
     async (user) => {
         const res = await axios.get(`https://car-parts-server.herokuapp.com/users/${user.email}`);
-        // console.log(res.data)
         return res.data;
     }
 );
