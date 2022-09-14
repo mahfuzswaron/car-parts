@@ -9,7 +9,7 @@ const Reviews = () => {
     useEffect(() => {
         fetch('https://car-parts-server.herokuapp.com/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => setReviews(data.reverse()))
 
     }, [reviews])
 
