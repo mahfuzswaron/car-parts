@@ -9,14 +9,14 @@ const Reviews = () => {
     useEffect(() => {
         fetch('https://car-parts-server.herokuapp.com/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => setReviews(data.reverse()))
 
     }, [reviews])
 
     if (!reviews || !reviews.length) return <Loader />
 
     return (
-        <section className='flex flex-col bg-white items-center lg:py-20 py-5 w-full'>
+        <section className='flex flex-col bg-white items-center lg:pt-20 pt-5 w-full'>
             <h3
                 className='text-3xl lg:text-4xl font-semibold mb-16 text-center text-neutral hover:text-primary uppercase'
             >

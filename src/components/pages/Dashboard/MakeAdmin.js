@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import Loader from '../../shared/Loader';
 
 const MakeAdmin = () => {
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('https://car-parts-server.herokuapp.com/users')
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [users]);
-    if (!users) {
-        return <Loader />
-    };
+    const fetchUsers = async () => {
+        const res = await fetch("https://car-parts-server.herokuapp.com/users");
+        return res.json();
+    }
+    const { data, status } = useQuery("orders", fetchUsers)
+
+    if (status === "loading") return <Loader />
 
     const handlMakeAdmin = (user) => {
         // console.log(email, 'is now admin');
@@ -28,7 +27,7 @@ const MakeAdmin = () => {
             body: JSON.stringify(updatedUser)
         })
             .then(res => res.json())
-            .then(data => console.log(data));
+        // .then(data => console.log(data));
     }
     return (
         <div className='py-5 lg:py-10'>
@@ -44,7 +43,7 @@ const MakeAdmin = () => {
                 </thead>
                 <tbody className=''>
                     {
-                        users.map((user, index) => <tr key={user._id} className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
+                        data.map((user, index) => <tr key={user._id} className={` h-10  ${index % 2 === 0 && 'bg-white'}`}>
                             <td>{index + 1}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>

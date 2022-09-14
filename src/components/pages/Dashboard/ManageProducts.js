@@ -1,7 +1,8 @@
 import React from 'react';
 import useProducts from "../../../hooks/useProducts";
+import Loader from '../../shared/Loader';
 const ManageProducts = () => {
-    const [products] = useProducts([]);
+    const [products, status] = useProducts([]);
     const handleRemove = id => {
         const confirm = window.confirm('Are you sure to remove this product?');
         if (confirm) {
@@ -14,6 +15,7 @@ const ManageProducts = () => {
         }
 
     }
+    if (status === "loading") return <Loader />
     return (
         <div className='py-5 lg:py-10'>
             <h1 className='font-medium lg:text-3xl text-xl text-center lg:text-left text-primary uppercase' >Manage Products</h1>
