@@ -54,7 +54,7 @@ const Dashboard = () => {
                                     <li><Link to="makeadmin">Make Admin</Link></li>
                                 </>
                             }
-                            <li><Link to="myprofile">My Profile</Link></li>
+                            <li><Link to="/dashboard">My Profile</Link></li>
                         </ul>
 
                     </div>
