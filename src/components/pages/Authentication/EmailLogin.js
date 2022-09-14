@@ -49,7 +49,7 @@ const EmailLogin = () => {
                 }
             </div>
             <input className='btn btn-primary w-full text-lg' value='Log in' type="submit" />
-            <p className='font-p pt-2'>New to Car Parts? <Link to='/registar' className='underline hover:text-primary'>Registar here</Link></p>
+            <p className='font-p pt-2'>New to Parts Universe? <Link to='/registar' className='underline hover:text-primary'>Registar here</Link></p>
         </form>
     );
 };

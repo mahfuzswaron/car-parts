@@ -1,9 +1,9 @@
-# CAR PARTS MANUFATURER WEB-APP
-
+# PARTS UNIVERSE
+### Manufacturer web-app
 [Live Site](https://car-parts-6b723.web.app/)
 
 ## Features:
-* Get Car parts
+* Buy Car parts
 * Manage orders in Dashboard
 * Add Review
 * Update Profile

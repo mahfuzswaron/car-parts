@@ -44,7 +44,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <Link style={{ 'fontFamily': 'Oswald' }} className='font-semibold text-lg lg:text-2xl' to='/'> <span className='text-primary'>CAR </span> PARTS</Link>
+                    <Link style={{ 'fontFamily': 'Oswald' }} className='font-semibold text-lg lg:text-2xl' to='/'> <span className='text-primary'>PARTS </span>UNIVERSE </Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
